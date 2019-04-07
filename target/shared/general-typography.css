@@ -11,6 +11,9 @@
   padding: 0 15px; }
   .output code {
     overflow: scroll; }
+  .output a {
+    font-family: Consolas, Monaco, monospace !important;
+    color: #333; }
   .output p, .output li {
     margin-bottom: .15em; }
   .output h1 {
