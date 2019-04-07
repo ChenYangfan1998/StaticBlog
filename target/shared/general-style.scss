@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+}
+
+
+header {
+  width: 100%;
+  background-color: #ffffff60;
+
+  padding-left: 10px;
+  display: flex;
+  height: 50px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: left;
+  position: fixed;
+  span {
+    font-weight: bold;
+  }
+}
+
+.header-spacer {
+  height: 50px;
+}

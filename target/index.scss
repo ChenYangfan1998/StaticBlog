@@ -1,0 +1,76 @@
+body {
+  background: url("./assets/background.jpg");
+  background-size: cover;
+}
+
+
+.directory-title{
+  margin: 130px auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    font-size: 46px;
+    font-family: "Noto Serif SC", serif;
+  }
+}
+
+@media (min-width: 700px) {
+  .box {
+    display: flex;
+    min-height: calc(100vh - 50px);
+    align-items: center;
+    justify-content: center;
+
+    .directory-title {
+      width: 200px;
+      flex: 1 1 auto;
+    }
+    .dirs {
+      width: 500px;
+      flex: 1 1 auto;
+    }
+
+  }
+}
+
+.dir-of-month {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 30px;
+  font-family: "Noto Serif SC", serif;
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .dir-item {
+    padding: 5px 0 5px 20px;
+    border-left: 2px skyblue solid;
+
+    .dir-item-title {
+      font-size: 20px;
+    }
+
+    .dir-item-description {
+      padding-top: 2px;
+      font-size: 14px;
+      color: #444444ee;
+    }
+
+    .dir-item-info {
+      font-size: 14px;
+      color: #444444ee;
+      padding-top: 10px;
+      span {
+        display: inline-block;
+        width: 10px;
+      }
+    }
+
+  }
+}
+
+

@@ -1,0 +1,52 @@
+body {
+  background: url("./assets/background.jpg");
+  background-size: cover; }
+
+.directory-title {
+  margin: 130px auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .directory-title div {
+    font-size: 46px;
+    font-family: "Noto Serif SC", serif; }
+
+@media (min-width: 700px) {
+  .box {
+    display: flex;
+    min-height: calc(100vh - 50px);
+    align-items: center;
+    justify-content: center; }
+    .box .directory-title {
+      width: 200px;
+      flex: 1 1 auto; }
+    .box .dirs {
+      width: 500px;
+      flex: 1 1 auto; } }
+.dir-of-month {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 30px;
+  font-family: "Noto Serif SC", serif; }
+  .dir-of-month .title {
+    font-size: 32px;
+    margin-bottom: 20px; }
+  .dir-of-month .dir-item {
+    padding: 5px 0 5px 20px;
+    border-left: 2px skyblue solid; }
+    .dir-of-month .dir-item .dir-item-title {
+      font-size: 20px; }
+    .dir-of-month .dir-item .dir-item-description {
+      padding-top: 2px;
+      font-size: 14px;
+      color: #444444ee; }
+    .dir-of-month .dir-item .dir-item-info {
+      font-size: 14px;
+      color: #444444ee;
+      padding-top: 10px; }
+      .dir-of-month .dir-item .dir-item-info span {
+        display: inline-block;
+        width: 10px; }
+
+/*# sourceMappingURL=index.css.map */
