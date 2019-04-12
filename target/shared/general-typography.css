@@ -9,6 +9,11 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 0 15px; }
+  .output .title {
+    font-size: 32px; }
+  @media (min-width: 500px) {
+    .output .title {
+      font-size: 40px; } }
   .output code {
     overflow: scroll; }
   .output a {

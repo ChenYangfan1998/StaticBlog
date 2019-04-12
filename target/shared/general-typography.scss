@@ -12,6 +12,17 @@
   margin: 0 auto;
   padding: 0 15px;
 
+  .title {
+    font-size: 32px;
+  }
+
+  @media (min-width: 500px) {
+    .title {
+      font-size: 40px;
+    }
+  }
+
+
   code{
     overflow: scroll;
   }

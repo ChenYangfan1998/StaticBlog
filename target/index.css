@@ -33,8 +33,11 @@ body {
     font-size: 32px;
     margin-bottom: 20px; }
   .dir-of-month .dir-item {
-    padding: 5px 0 5px 20px;
-    border-left: 2px skyblue solid; }
+    padding: 10px 0 10px 20px;
+    border-left: 2px #009688 solid;
+    transition: background-color .5s ease-out; }
+    .dir-of-month .dir-item:hover {
+      background-color: #aaaaaa22; }
     .dir-of-month .dir-item .dir-item-title {
       font-size: 20px; }
     .dir-of-month .dir-item .dir-item-description {

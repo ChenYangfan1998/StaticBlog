@@ -47,8 +47,14 @@ body {
     margin-bottom: 20px;
   }
   .dir-item {
-    padding: 5px 0 5px 20px;
-    border-left: 2px skyblue solid;
+    padding: 10px 0 10px 20px;
+    border-left: 2px #009688 solid;
+    transition: background-color .5s ease-out;
+
+
+    &:hover {
+      background-color: #aaaaaa22;
+    }
 
     .dir-item-title {
       font-size: 20px;
