@@ -1,0 +1,26 @@
+body {
+  background: url("./background.jpg"); }
+
+.on-working {
+  text-align: justify;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 75px;
+  font-weight: bold; }
+  .on-working .sub-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400; }
+
+.on-working > div {
+  padding: 20px 20px;
+  border: white 4px solid; }
+
+@media (min-width: 500px) {
+  .on-working {
+    font-size: 100px; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -3,8 +3,7 @@ body {
   background-size: cover;
 }
 
-
-.directory-title{
+.directory-title {
   margin: 100px auto;
   text-align: center;
   display: flex;
@@ -17,23 +16,11 @@ body {
   }
 }
 
-@media (min-width: 700px) {
-  .box {
-    display: flex;
-    min-height: calc(100vh - 50px);
-    align-items: center;
-    justify-content: center;
-
-    .directory-title {
-      width: 200px;
-      flex: 1 1 auto;
-    }
-    .dirs {
-      width: 500px;
-      flex: 1 1 auto;
-    }
-
-  }
+.box {
+  display: flex;
+  min-height: 100vh;
+  align-items: start;
+  justify-content: center;
 }
 
 .dir-of-month {
@@ -50,7 +37,6 @@ body {
     padding: 10px 0 10px 20px;
     border-left: 2px #009688 solid;
     transition: background-color .5s ease-out;
-
 
     &:hover {
       background-color: #aaaaaa22;
@@ -75,8 +61,67 @@ body {
         width: 10px;
       }
     }
-
   }
 }
 
+.end {
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.slogan-box {
+  position: relative;
+  line-height: 40px;
+  min-height: calc(100vh - 50px);
+  font-family: "Noto Serif SC", serif;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  text-align: justify;
+}
+
+.slogan-source {
+  font-size: 14px;
+  text-align: right;
+}
+.slogan {
+  font-size: 24px;
+  &:before {
+    color: gray;
+    font-size: 35px;
+    content: '“';
+    position: absolute;
+    transform: translate(-40px, -5px);
+  }
+
+  &:after {
+    color: gray;
+    font-size: 35px;
+    position: absolute;
+    content: '”';
+    transform: translate(10px, -5px);
+  }
+}
+
+@media (min-width: 500px) {
+  .slogan {
+    line-height: 50px;
+    font-size: 32px;
+  }
+  .slogan-source {
+    font-size: 16px;
+  }
+}
+
+.copyright {
+  color: #555;
+  font-size: 12px;
+  position: absolute;
+  bottom: 20px;
+}
 
