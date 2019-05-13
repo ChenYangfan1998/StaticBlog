@@ -3,8 +3,12 @@ body {
   font-family: sans-serif; }
 
 header {
+  cursor: pointer;
   width: 100%;
-  background-color: #ffffff80;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   padding-left: 10px;
   display: flex;
   height: 50px;

@@ -1,0 +1,195 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.black-page {
+  position: relative;
+  background-color: black;
+}
+
+
+.full-height-page {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (min-width: 550px) {
+  .left-layout {
+    padding: 0 100px;
+    justify-content: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .index-padding {
+    padding: 0 0 0 300px;
+  }
+}
+
+@media (max-width: 550px) {
+  .left-padding {
+    padding: 0 25px
+  }
+}
+
+.title-box {
+  position: relative;
+  overflow: hidden;
+  background: url("./title-background.jpg") no-repeat top center;
+  background-size: cover;
+}
+
+.index-title {
+
+  z-index: 100;
+  font-size: 80px;
+  font-weight: 800;
+  color: white;
+  background: black;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 850px) {
+  .index-title {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 550px) {
+  .index-title {
+    font-size: 40px;
+  }
+}
+
+
+.introduction {
+  position: relative;
+  font-size: 20px;
+  line-height: 40px;
+  color: gray;
+  max-width: 1000px;
+  font-weight: bold;
+  .white-text {
+    color: white;
+  }
+}
+
+@media (max-width: 550px) {
+  .introduction {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+.stars {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: #ffffff 0 0 100px 16px;
+  animation: drop 10s infinite ease-out;
+
+  // default value
+  top: 100px;
+  right: 100px;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-140vw, 140vh);
+  }
+}
+
+.gray-page {
+  background-color: black;
+}
+
+.gray-line {
+  border-bottom: 2px solid #202020;
+}
+
+.wrap-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.text-box {
+  margin: 100px 100px;
+}
+
+@media (max-width: 550px) {
+  .text-box {
+    margin: 100px 25px;
+  }
+}
+
+.project-img {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: 20px auto 20px auto;
+  display: block;
+}
+
+
+@media (min-width: 1400px) {
+  .project-img {
+    max-height: 100vh;
+    display: block;
+  }
+
+
+  #catch-auto-img {
+    position: absolute;
+    top: -180px;
+    right: -120%;
+  }
+
+  #catch-result-img {
+    position: absolute;
+    top: 230px;
+    right: -120%;
+  }
+
+  #web-img {
+    max-width: unset;
+    position: absolute;
+    top: -130px;
+    right: -1200px;
+    width: 200%;
+  }
+
+  #j2ee-img {
+    max-width: unset;
+    position: absolute;
+    top: -60px;
+    right: -1200px;
+    width: 200%;
+  }
+}
+
+a {
+  color: white;
+}

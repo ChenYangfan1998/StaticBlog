@@ -1,6 +1,7 @@
 // 文字排版
 
 .output {
+  -webkit-overflow-scrolling: touch;
   font-family: "Noto Serif SC", serif;
   line-height: 1.8;
   width: 100%;

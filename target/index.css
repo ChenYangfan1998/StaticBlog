@@ -1,7 +1,8 @@
 @charset "UTF-8";
 body {
   background: url("./assets/background.jpg");
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 .directory-title {
   margin: 100px auto;
@@ -55,14 +56,14 @@ body {
   margin: 20px 0; }
 
 .slogan-box {
-  position: relative;
   line-height: 40px;
-  min-height: calc(100vh - 50px);
+  margin-top: 100px;
+  min-height: calc(20vh - 50px);
   font-family: "Noto Serif SC", serif;
   font-size: 24px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 50px;
   text-align: justify; }
 
@@ -93,9 +94,29 @@ body {
   .slogan-source {
     font-size: 16px; } }
 .copyright {
+  width: 100%;
+  font-family: "Noto Serif SC", serif;
   color: #555;
   font-size: 12px;
   position: absolute;
-  bottom: 20px; }
+  bottom: 20px;
+  text-align: center; }
+
+.resume-link {
+  font-size: 16px;
+  color: #00000099;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  text-align: center; }
+  .resume-link a {
+    color: #00000099; }
+  .resume-link span {
+    display: inline-block;
+    padding: 0 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 3px 10px #00000022; }
 
 /*# sourceMappingURL=index.css.map */
