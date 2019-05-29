@@ -3,7 +3,7 @@
   font-family: "Noto Serif SC", serif;
   line-height: 1.8;
   width: 100%;
-  word-break: break-all;
+  word-break: break-word;
   text-align: justify;
   box-sizing: border-box;
   overflow: hidden;
@@ -16,9 +16,12 @@
     .output .title {
       font-size: 40px; } }
   .output code {
-    overflow: scroll; }
+    overflow: scroll;
+    word-break: normal;
+    padding: 0 3px;
+    font-family: "Courier", "Courier New", monospace !important; }
   .output a {
-    font-family: Consolas, Monaco, monospace !important;
+    font-family: "Courier", "Courier New", monospace !important;
     color: #333; }
   .output p, .output li {
     margin-bottom: .15em; }
@@ -65,7 +68,7 @@
     .output ol li {
       text-align: left; }
   .output ol > li::before {
-    font-family: Consolas, Monaco, monospace !important;
+    font-family: "Courier", "Courier New", monospace !important;
     overflow: hidden;
     font-size: 16px;
     content: counter(li) ".";

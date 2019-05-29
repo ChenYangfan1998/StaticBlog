@@ -1,0 +1,349 @@
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS 补课 · Yeung Fan Studio</title>
+</head>
+<link rel="icon" href="./../../y.png" type="image/x-icon"/>
+<link rel="stylesheet" href="./../../shared/general-typography.css">
+<link rel="stylesheet" href="./../../shared/general-style.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:400&amp;subset=chinese-simplified" rel="stylesheet">
+<link href="./../../shared/prism.css" rel="stylesheet"/>
+
+<body>
+<header onclick="window.open('./../../index.html','_self')">
+  <span>YeungFan&nbsp;</span>Studio
+</header>
+<div class="header-spacer"></div>
+
+<div class="output">
+  <div class="title">CSS 补课</div>
+  <blockquote>
+    面试过程问到基础知识，发现自己的 CSS 基础惨不忍睹 <br>
+    果然是印证了"不要将系统的限制或条件视为局限性，把他们看作构建创意设计的根基"这句话，先画地为牢，反正也还是能用...但是这样实在是不好，我觉得可以在二面之前，把CSS内容尽可能完整地看一遍 <br>
+    这个博客的优点也可以展示出来啦，我准备在文章中直接插入演示代码和代码的执行结果，应该会比较直观。
+  </blockquote>
+
+  <h1 id="css世界阅读笔记">CSS世界阅读笔记</h1>
+  <h3 id="第一章-流">第一章 流</h3>
+  <ol>
+    <li>CSS看中的是特性之间的相互联系和具象能力</li>
+    <li>CSS诞生的时代决定了这个工具是为了图文信息展示服务的</li>
+    <li>CSS图文信息显示能力的强悍来源于文档流的特性</li>
+  </ol>
+  <h3 id="第二章-术语与概念">第二章 术语与概念</h3>
+  <ol>
+    <li>属性选择器：[] 例如 [title^=“css”]</li>
+    <li>关系选择器：
+      <ol>
+        <li>兄弟选择器：选择当前元素之后的所有合乎规则的兄弟元素，~</li>
+        <li>相邻兄弟选择器：仅仅选择当前元素相邻的那个合乎规则的兄弟元素，+</li>
+      </ol>
+    </li>
+    <li>web规范描述之外的行为称为未定义行为，由浏览器自行定义规则。</li>
+  </ol>
+  <h3 id="第三章-流、元素与基本尺寸">第三章 流、元素与基本尺寸</h3>
+  <ol>
+    <li>格式化宽度：
+      <ol>
+        <li>
+          格式化宽度仅出现在“绝对定位模型”中，也就是出现在position属性为absolute或fixed的元素中，在默认情况下，绝对定位元素的宽度由内部尺寸决定，但是当left/right或者top/bottom对立方位的属性值同时被设定时，宽度表现为格式化宽度，其宽度大小相对于最近的具有定位特性（position属性不为static）的祖先原色计算。
+        </li>
+      </ol>
+    </li>
+    <li>一段有趣的代码：希望文字少时居中显示，文字多时居左显示。
+      <pre><code class="language-css">.box {
+ text-align: center;
+}
+.content {
+ display: inline-block;
+ text-align: left;
+}</code></pre>
+    </li>
+    <li>首选最小宽度：设置inline-block元素宽度为0，此时表现的宽度就为首选最小宽度</li>
+    <li>border-box中内容宽度超出是会将盒子撑大的。</li>
+    <li>绝对定位元素的百分比计算和非绝对定位元素的百分比计算是有区别的，区别在于绝对定位的宽高百分比计算是相对于padding box的，也就是说会把padding大小值计算在内。例子：代码：</li>
+    <li>height: auto 可以在需要设定width后恢复图片比例时使用。</li>
+    <li>关于内联元素之前的空白，规范原文为：“Each line box starts with a zero-width inline box with the element’s font and line height
+      properties. We call that imaginary box a ‘strut’.” 书里起了个叫幽灵空白节点的名字
+    </li>
+  </ol>
+  <h3 id="第四章-盒尺寸">第四章 盒尺寸</h3>
+  <ol>
+    <li>替换元素：具有可替换内容（属性值可以被修改）
+      <ol>
+        <li>内容的外观不受页面上的css影响</li>
+        <li>有自己的尺寸</li>
+        <li>在很多CSS属性上有自己的一套表现规则</li>
+      </ol>
+    </li>
+    <li>Firefox 中 input 元素默认为inline，而其他默认为inline-block</li>
+    <li>以img为例子：
+      <ol>
+        <li>Img元素的固有尺寸无法修改，修改其长宽只是修改了外部盒子的长宽，而由于img元素默认声明object-fit为fill，因而会适应外部盒子的长宽。（示例代码）（这里好像很有东西，mark）</li>
+      </ol>
+    </li>
+    <li>content使用属性
+      <pre><code class="language-css">img::after {
+ content: attr(alt);
+}</code></pre>
+    </li>
+    <li>深入理解content计数器：
+      <ol>
+        <li>属性：counter-reset &amp; counter-increment</li>
+        <li>方法：counter() &amp; counters()</li>
+        <li>counter-reset可以同时设置两个值:counter-reset: a 1 b 2</li>
+        <li>使用counter-increment使得对应计数器数值发生变化</li>
+        <li>counter()是个方法，可以有第二个参数是设置样式比如罗马数字</li>
+        <li>counters()多用于嵌套计数，示例代码：</li>
+      </ol>
+    </li>
+    <pre><code class="language-html">&lt;div class=&quot;reset&quot;&gt;
+  &lt;div class=&quot;counter&quot;&gt;
+    陈某今天干了啥
+    &lt;div class=&quot;reset&quot;&gt;
+      &lt;div class=&quot;counter&quot;&gt;
+        陈某今天干了啥
+      &lt;/div&gt;
+      &lt;div class=&quot;counter&quot;&gt;
+        陈某今天干了啥
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;counter&quot;&gt;
+    陈某今天啥都没干
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.reset {
+    counter-reset: chen 0;
+    padding-left: 20px;
+  }
+  .counter::before {
+    content: counters(chen, &#39;-&#39;)&#39;.&#39;;
+    counter-increment: chen;
+  }
+&lt;/style&gt;</code></pre>
+
+    <p>运行结果：</p>
+
+    <div class="reset box result-box">
+      <div class="counter">
+        陈某今天干了啥
+        <div class="reset">
+          <div class="counter">
+            陈某今天干了啥
+          </div>
+          <div class="counter">
+            陈某今天干了啥
+          </div>
+        </div>
+      </div>
+      <div class="counter">
+        陈某今天啥都没干
+      </div>
+    </div>
+
+    <style>
+      .reset {
+        counter-reset: chen 0;
+        padding-left: 20px;
+      }
+
+      .counter::before {
+        content: counters(chen, '-') '.';
+        counter-increment: chen;
+      }
+    </style>
+
+    <li>padding
+      <ol>
+        <li>box-sizing设置为border-box之后，如果宽度足够大，也不一定表现为所设置的width</li>
+        <li>内联元素的padding同样作用于垂直方向，但是因为内联元素垂直方向的表现完全受line-height和vertical-align的影响，视觉上并没有改变上一行与下一行的间距，事实上padding仍然起作用
+          例子：
+          <pre><code class="language-html">&lt;span style=&quot;padding: 20px; background-color: #b3d4fc &quot;&gt;内联元素&lt;/span&gt;</code></pre>
+          运行结果如下：
+          <span style="padding: 20px; background-color: #b3d4fc ">内联元素</span>
+        </li>
+        <li>
+          于是有一个简单的小技巧增加按钮的可点击区域：
+          <pre><code class="language-css">article a {
+  padding: .25em 0;
+}</code></pre>
+        </li>
+        <li>padding的百分比值均相对于宽度计算（！）</li>
+        <li>内联元素的padding是会断行的</li>
+        <li>对于"strut"（前文有提到）一般可以直接设置font-size为0就好了</li>
+      </ol>
+    </li>
+
+    <li>margin
+      <ol>
+        <li>想要给滚动容器留白最好使用子元素的margin-bottom，不会有兼容性问题</li>
+        <li>margin合并的三个场景：
+          <ol>
+            <li>相邻兄弟元素</li>
+            <li>父级和第一 / 最后一个子元素</li>
+            <li>空块级元素</li>
+          </ol>
+        </li>
+        <li>margin:auto也能用于垂直居中：格式化上下文（上文有提到）
+          <pre><code class="language-css">.father {
+  width: 300px; height: 150px;
+  position: relative;
+}
+.son {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  width: 200px; height: 100px;
+  margin: auto auto;
+}</code></pre>
+          效果如下：
+          <div class="father result-box">
+            <div class="son"></div>
+          </div>
+
+          <style>
+            .father {
+              width: 300px;
+              height: 150px;
+              position: relative;
+            }
+
+            .son {
+              background-color: #b3d4fc;
+              margin: auto auto;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              width: 200px;
+              height: 100px;
+            }
+          </style>
+        </li>
+        <li>display值为inline的非替换元素的垂直margin是无效的</li>
+      </ol>
+    </li>
+
+    <li>border
+      <ol>
+        <li>border不支持百分比</li>
+        <li><code>border-style: dashed</code>虚线，不同浏览器有不同的渲染样式</li>
+        <li>一个很有意思的虚线加号上传区域实现：
+          <pre><code class="language-html">&lt;div class=&quot;add&quot;&gt;&lt;/div&gt;
+&lt;style&gt;
+  .add {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    color: #ccc;
+    border: 2px dashed;
+  }
+
+  .add::before, .add::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: &quot;&quot;;
+    height: 50%;
+  }
+
+  .add::before {
+    width: 16px;
+    border-top: 4px solid;
+    margin: -2px 0 0 -8px;
+  }
+
+  .add::after {
+    height: 16px;
+    border-left: 4px solid;
+    margin: -8px 0 0 -2px;
+  }
+
+  .add:hover {
+    color: #06c;
+  }
+&lt;/style&gt;
+</code></pre>
+          实现效果：
+          <div class="add"></div>
+          <style>
+            .add {
+              display: inline-block;
+              position: relative;
+              width: 50px;
+              height: 50px;
+              color: #ccc;
+              border: 2px dashed;
+              transition: .15s color ease-out;
+            }
+
+            .add::before, .add::after {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              content: "";
+              height: 50%;
+            }
+
+            .add::before {
+              width: 16px;
+              border-top: 4px solid;
+              margin: -2px 0 0 -8px;
+            }
+
+            .add::after {
+              height: 16px;
+              border-left: 4px solid;
+              margin: -8px 0 0 -2px;
+            }
+
+            .add:hover {
+              color: #06c;
+            }
+          </style>
+        </li>
+        <li>可以使用透明的border增加按钮的可点击区域，这个办法有可能会破坏布局，应该预留空间</li>
+        <li>三角形绘制：(<b>如果设置height和width则会绘制出梯形</b>)
+          <span class="triangle"></span>
+          <style>
+            .triangle {
+              display: inline-block;
+              height: 0;
+              width: 0;
+              vertical-align: middle;
+              border: 8px solid;
+              border-color: #ccc transparent transparent;
+            }
+          </style>
+        </li>
+        代码如下：
+        <pre><code class="language-html">&lt;span class=&quot;triangle&quot;&gt;&lt;/span&gt;
+&lt;style&gt;
+  .triangle {
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+    border: 8px solid;
+    border-color: #ccc transparent transparent;
+  }
+&lt;/style&gt;</code></pre>
+
+      </ol>
+    </li>
+  </ol>
+待续...
+
+  <br>
+
+</div>
+<script src="./../../shared/prism.js"></script>
+</body>
+</html>
