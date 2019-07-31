@@ -1,6 +1,7 @@
 .result-box {
   padding: 20px;
   border: 1px #999999 solid;
-  box-sizing: border-box; }
-
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 /*# sourceMappingURL=style.css.map */

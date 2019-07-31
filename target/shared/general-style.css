@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 header {
   cursor: pointer;
@@ -10,16 +11,27 @@ header {
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 50px;
   font-size: 20px;
-  align-items: center;
-  justify-content: left;
-  position: fixed; }
-  header span {
-    font-weight: bold; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  position: fixed;
+  color: #353535;
+}
+
+header span {
+  font-weight: bold;
+  color: #D32F2F;
+}
 
 .header-spacer {
-  height: 50px; }
-
+  height: 50px;
+}
 /*# sourceMappingURL=general-style.css.map */
