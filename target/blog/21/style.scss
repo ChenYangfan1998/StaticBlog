@@ -2,6 +2,12 @@ video {
   outline: none;
   display: block;
   box-sizing: border-box;
+}
+
+@media (min-width: 500px) {
   border-bottom: 2px solid black;
   border-left: 2px solid black;
+
 }
+
+
