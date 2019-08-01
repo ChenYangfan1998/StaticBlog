@@ -107,6 +107,7 @@
   font-family: "Courier", "Courier New", monospace !important;
   overflow: hidden;
   font-size: 16px;
+  line-height: 0;
   content: counter(li) ".";
   color: #D32F2F;
   display: inline;
