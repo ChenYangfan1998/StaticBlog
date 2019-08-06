@@ -84,7 +84,7 @@ function addListener() {
 function nextCheckPoint() {
   const currentPosition = getCurrentScrollTop();
   checkPoints.some(checkPoint => {
-    if (currentPosition < checkPoint) {
+    if (currentPosition < checkPoint - 10) {
       scrollToY(currentPosition, checkPoint, 10, position => window.scrollTo(0, position))
       return true
     }
@@ -95,7 +95,7 @@ function lastCheckPoint() {
   const currentPosition = getCurrentScrollTop();
   let target = currentPosition
   checkPoints.some(checkPoint => {
-    if (currentPosition > checkPoint) {
+    if (currentPosition > checkPoint + 10) {
       target = checkPoint
     } else {
       return true

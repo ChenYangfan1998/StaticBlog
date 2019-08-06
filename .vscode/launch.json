@@ -7,7 +7,10 @@
         "type": "chrome",
         "request": "launch",
         "name": "Launch Chrome against localhost",
-        "url": "http://localhost:8080/target/resume",
+        "url": "http://localhost:5500/target/resume",
         "webRoot": "${workspaceFolder}"
     }]
+
+
+
 }
