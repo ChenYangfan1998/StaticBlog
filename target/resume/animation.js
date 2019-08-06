@@ -4,7 +4,7 @@ let wideEnough = {
 
 window.addEventListener('resize', () => {
   wideEnough.value = window.innerWidth > 1345
-  console.log(wideEnough.value)
+  console.log("is slide mode open: " + wideEnough.value)
 })
 
 let sections = document.getElementsByTagName("section")
